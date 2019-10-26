@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Post</title>
+  </head>
+
+  <body style="font-size:30px">
+    <?php echo "hello";?>
+    <h2>View a User's Posts</h2>
+    <form action="./ViewUserPosts.php">
+      <label>User Name: </label>
+      <select name="nameInput">
+        <?php require './FillDropdown.php'; ?>
+      </select><br><br>
+      <input type="submit" value="Fetch Posts">
+    </form>
+  </body>
+
+</html>
