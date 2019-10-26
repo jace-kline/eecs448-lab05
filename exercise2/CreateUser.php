@@ -10,12 +10,17 @@ if ($mysqli->connect_errno) {
 $query = "SELECT user_id FROM Users WHERE user_id='" . $_GET["nameInput"] . "'";
 $result = $mysqli->query($query);
 
-if ($result->num_rows == 0) {
+if ($result->num_rows == 0 && strlen($_GET["nameInput"]) > 0) {
     $result->free();
     $mysqli->query("INSERT INTO Users (user_id) VALUES ('" . $_GET["nameInput"] . "')");
-    echo "<p>Success! The user, <b>" . $_GET["nameInput"] . "</b> is registered.</p>";
+    echo "<br><p style='font-size:30px'>Success! The user, <b>" . $_GET["nameInput"] . "</b>, is registered.</p>";
 } else {
-  echo "<p>Invalid entry. The inputted user name <b>" . $_GET["nameInput"] . "</b> was blank or already exists.</p>";
+    if(strlen($_GET["nameInput"]) == 0) {
+        echo "<br><p style='font-size:30px'>Invalid entry. The inputted user name was blank.</p>";
+    }
+    else {
+        echo "<br><p style='font-size:30px'>Invalid entry. The inputted user name <b>" . $_GET["nameInput"] . "</b> already exists.</p>";
+    }
 }
 
 /* close connection */
