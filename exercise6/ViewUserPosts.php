@@ -21,12 +21,12 @@ if ($result = $mysqli->query($query)) {
 
         /* fetch associative array and display user names in a table*/
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["content"] . "</td></tr>";
+            echo "<tr><td style='padding-bottom:2em'>" . $row["content"] . "</td></tr>";
         }
-    
+
         /* free result set */
         $result->free();
-    
+
         echo "</table>";
     }
 

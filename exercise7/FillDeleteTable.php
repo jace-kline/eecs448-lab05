@@ -12,7 +12,7 @@ if ($mysqli->connect_errno) {
 $query = "SELECT post_id,author_id,content FROM Posts";
 
 if ($result = $mysqli->query($query)) {
-    echo "<table style='font-size:30px; width:80%;table-layout:fixed'>";
+    echo "<table style='font-size:30px; width:auto;border: 1px solid black;table-layout:fixed;border-collapse:separate;border-spacing:30px 30px'>";
     echo "<th><td style='width=10%'><b><u>Delete?</u></b></td><td><b><u>Author ID</u></b></td><td><b><u>Post Content</u></b></td></th>";
 
     /* fetch associative array and display the 3 values in the table*/
